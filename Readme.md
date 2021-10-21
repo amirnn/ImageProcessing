@@ -27,3 +27,6 @@ $ cmake ..
 $ make -j8
 $ ctest # Run the tests
 ```
+
+## Tests
+To be able to link correctly to gtest, we need to declare it before the boost library in the conanfile.txt.

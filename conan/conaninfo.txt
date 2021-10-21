@@ -11,6 +11,7 @@
     boost/1.Y.Z
     cimg/2.Y.Z
     eigen/3.Y.Z
+    gtest/cci.20210126
     opencv/4.Y.Z
     qt/6.Y.Z
 
@@ -38,6 +39,7 @@
     eigen/3.4.0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
     freetype/2.10.4:5fdd04588d330f1bdc6c74b6c9f567788e1fac03
     glib/2.70.0:36a073112617acc934df5640d2f101744932bac6
+    gtest/cci.20210126:46bbc7d40bd1be8662116e9cb5970d0131978465
     harfbuzz/2.8.0:58992d3c710ed1cfb5fa32cd2ec00f263d41ccf9
     jasper/2.0.32:bb954fef514ceffa1ccfa25ba41bc3eb01df5107
     jbig/20160605:00a978e4aada61929e3b349d557b27d166d20db4
@@ -155,6 +157,11 @@
     glib:shared=False
     glib:with_elf=True
     glib:with_pcre=True
+    gtest:build_gmock=True
+    gtest:fPIC=True
+    gtest:hide_symbols=False
+    gtest:no_main=False
+    gtest:shared=False
     harfbuzz:fPIC=True
     harfbuzz:shared=False
     harfbuzz:with_freetype=True

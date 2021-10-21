@@ -158,6 +158,44 @@ set(CONAN_LIBS_CIMG ${CONAN_PKG_LIBS_CIMG} ${CONAN_SYSTEM_LIBS_CIMG} ${CONAN_FRA
 
 
 #################
+###  GTEST
+#################
+set(CONAN_GTEST_ROOT "/Users/amirnourinia/.conan/data/gtest/cci.20210126/_/_/package/46bbc7d40bd1be8662116e9cb5970d0131978465")
+set(CONAN_INCLUDE_DIRS_GTEST "/Users/amirnourinia/.conan/data/gtest/cci.20210126/_/_/package/46bbc7d40bd1be8662116e9cb5970d0131978465/include")
+set(CONAN_LIB_DIRS_GTEST "/Users/amirnourinia/.conan/data/gtest/cci.20210126/_/_/package/46bbc7d40bd1be8662116e9cb5970d0131978465/lib")
+set(CONAN_BIN_DIRS_GTEST )
+set(CONAN_RES_DIRS_GTEST )
+set(CONAN_SRC_DIRS_GTEST )
+set(CONAN_BUILD_DIRS_GTEST "/Users/amirnourinia/.conan/data/gtest/cci.20210126/_/_/package/46bbc7d40bd1be8662116e9cb5970d0131978465/")
+set(CONAN_FRAMEWORK_DIRS_GTEST )
+set(CONAN_LIBS_GTEST gtest_main gmock_main gmock gtest)
+set(CONAN_PKG_LIBS_GTEST gtest_main gmock_main gmock gtest)
+set(CONAN_SYSTEM_LIBS_GTEST )
+set(CONAN_FRAMEWORKS_GTEST )
+set(CONAN_FRAMEWORKS_FOUND_GTEST "")  # Will be filled later
+set(CONAN_DEFINES_GTEST )
+set(CONAN_BUILD_MODULES_PATHS_GTEST )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_GTEST )
+
+set(CONAN_C_FLAGS_GTEST "")
+set(CONAN_CXX_FLAGS_GTEST "")
+set(CONAN_SHARED_LINKER_FLAGS_GTEST "")
+set(CONAN_EXE_LINKER_FLAGS_GTEST "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_GTEST_LIST "")
+set(CONAN_CXX_FLAGS_GTEST_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_GTEST_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_GTEST_LIST "")
+
+# Apple Frameworks
+conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_GTEST "${CONAN_FRAMEWORKS_GTEST}" "_GTEST" "")
+# Append to aggregated values variable
+set(CONAN_LIBS_GTEST ${CONAN_PKG_LIBS_GTEST} ${CONAN_SYSTEM_LIBS_GTEST} ${CONAN_FRAMEWORKS_FOUND_GTEST})
+
+
+#################
 ###  BOOST
 #################
 set(CONAN_BOOST_ROOT "/Users/amirnourinia/.conan/data/boost/1.77.0/_/_/package/344681cf2956030278384cead4a3e9ba34dcbbe5")
@@ -1567,7 +1605,7 @@ set(CONAN_SETTINGS_COMPILER_VERSION "13")
 set(CONAN_SETTINGS_OS "Macos")
 set(CONAN_SETTINGS_OS_BUILD "Macos")
 
-set(CONAN_DEPENDENCIES qt cimg boost openssl pcre2 double-conversion harfbuzz sqlite3 libpq odbc opengl fftw opencv libbacktrace eigen freetype glib openexr libtiff jasper quirc protobuf ade libpng brotli libffi pcre libelf libgettext libjpeg libdeflate xz_utils jbig zstd libwebp zlib bzip2 libiconv)
+set(CONAN_DEPENDENCIES qt cimg gtest boost openssl pcre2 double-conversion harfbuzz sqlite3 libpq odbc opengl fftw opencv libbacktrace eigen freetype glib openexr libtiff jasper quirc protobuf ade libpng brotli libffi pcre libelf libgettext libjpeg libdeflate xz_utils jbig zstd libwebp zlib bzip2 libiconv)
 # Storing original command line args (CMake helper) flags
 set(CONAN_CMD_CXX_FLAGS ${CONAN_CXX_FLAGS})
 
@@ -1588,6 +1626,7 @@ set(CONAN_INCLUDE_DIRS "/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/package/82b
 			"/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/package/82b93b16e8ac8ffc40fde07cc9e1d4512947b894/include/QtXml"
 			"/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/package/82b93b16e8ac8ffc40fde07cc9e1d4512947b894/include/QtCore"
 			"/Users/amirnourinia/.conan/data/cimg/2.9.9/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/include"
+			"/Users/amirnourinia/.conan/data/gtest/cci.20210126/_/_/package/46bbc7d40bd1be8662116e9cb5970d0131978465/include"
 			"/Users/amirnourinia/.conan/data/boost/1.77.0/_/_/package/344681cf2956030278384cead4a3e9ba34dcbbe5/include"
 			"/Users/amirnourinia/.conan/data/openssl/1.1.1k/_/_/package/5a40bf639b389c63ba1d847e246a06541fa354b3/include"
 			"/Users/amirnourinia/.conan/data/pcre2/10.37/_/_/package/e5569699cb3613ba76522b1634e3bb2b10ae2a6a/include"
@@ -1634,6 +1673,7 @@ set(CONAN_INCLUDE_DIRS "/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/package/82b
 set(CONAN_LIB_DIRS "/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/package/82b93b16e8ac8ffc40fde07cc9e1d4512947b894/lib"
 			"/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/package/82b93b16e8ac8ffc40fde07cc9e1d4512947b894/res/archdatadir/plugins/platforms"
 			"/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/package/82b93b16e8ac8ffc40fde07cc9e1d4512947b894/res/archdatadir/plugins/sqldrivers"
+			"/Users/amirnourinia/.conan/data/gtest/cci.20210126/_/_/package/46bbc7d40bd1be8662116e9cb5970d0131978465/lib"
 			"/Users/amirnourinia/.conan/data/boost/1.77.0/_/_/package/344681cf2956030278384cead4a3e9ba34dcbbe5/lib"
 			"/Users/amirnourinia/.conan/data/openssl/1.1.1k/_/_/package/5a40bf639b389c63ba1d847e246a06541fa354b3/lib"
 			"/Users/amirnourinia/.conan/data/pcre2/10.37/_/_/package/e5569699cb3613ba76522b1634e3bb2b10ae2a6a/lib"
@@ -1689,8 +1729,8 @@ set(CONAN_RES_DIRS "/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/package/82b93b1
 			"/Users/amirnourinia/.conan/data/glib/2.70.0/_/_/package/36a073112617acc934df5640d2f101744932bac6/res"
 			"/Users/amirnourinia/.conan/data/libjpeg/9d/_/_/package/5a40bf639b389c63ba1d847e246a06541fa354b3/res" ${CONAN_RES_DIRS})
 set(CONAN_FRAMEWORK_DIRS  ${CONAN_FRAMEWORK_DIRS})
-set(CONAN_LIBS qcocoa qsqlite qsqlpsql qsqlodbc Qt6Network Qt6Sql Qt6Test Qt6PrintSupport Qt6OpenGLWidgets Qt6Widgets Qt6OpenGL Qt6Gui Qt6Concurrent Qt6Xml Qt6Core boost_contract boost_coroutine boost_fiber_numa boost_fiber boost_context boost_graph boost_iostreams boost_json boost_locale boost_log_setup boost_log boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_nowide boost_program_options boost_random boost_regex boost_stacktrace_addr2line boost_stacktrace_backtrace boost_stacktrace_basic boost_stacktrace_noop boost_timer boost_type_erasure boost_thread boost_chrono boost_container boost_date_time boost_unit_test_framework boost_prg_exec_monitor boost_test_exec_monitor boost_exception boost_wave boost_filesystem boost_atomic boost_wserialization boost_serialization ssl crypto pcre2-posix pcre2-8 pcre2-16 pcre2-32 double-conversion harfbuzz sqlite3 pq pgcommon pgcommon_shlib pgport pgport_shlib odbc odbcinst odbccr ltdl fftw3 opencv_ml opencv_photo opencv_highgui opencv_videoio opencv_imgcodecs opencv_objdetect opencv_stitching opencv_dnn opencv_gapi opencv_video opencv_calib3d opencv_features2d opencv_flann opencv_imgproc opencv_core backtrace freetype gthread-2.0 gio-2.0 gmodule-2.0 gobject-2.0 glib-2.0 IlmImfUtil-2_5 IlmImf-2_5 Imath-2_5 Half-2_5 IexMath-2_5 IlmThread-2_5 Iex-2_5 tiffxx tiff jasper quirc protoc protobuf ade png16 brotlidec-static brotlienc-static brotlicommon-static ffi pcreposix pcre pcre16 pcre32 elf gnuintl jpeg deflate lzma jbig zstd webpdecoder webpdemux webpmux webp z bz2 iconv charset ${CONAN_LIBS})
-set(CONAN_PKG_LIBS qcocoa qsqlite qsqlpsql qsqlodbc Qt6Network Qt6Sql Qt6Test Qt6PrintSupport Qt6OpenGLWidgets Qt6Widgets Qt6OpenGL Qt6Gui Qt6Concurrent Qt6Xml Qt6Core boost_contract boost_coroutine boost_fiber_numa boost_fiber boost_context boost_graph boost_iostreams boost_json boost_locale boost_log_setup boost_log boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_nowide boost_program_options boost_random boost_regex boost_stacktrace_addr2line boost_stacktrace_backtrace boost_stacktrace_basic boost_stacktrace_noop boost_timer boost_type_erasure boost_thread boost_chrono boost_container boost_date_time boost_unit_test_framework boost_prg_exec_monitor boost_test_exec_monitor boost_exception boost_wave boost_filesystem boost_atomic boost_wserialization boost_serialization ssl crypto pcre2-posix pcre2-8 pcre2-16 pcre2-32 double-conversion harfbuzz sqlite3 pq pgcommon pgcommon_shlib pgport pgport_shlib odbc odbcinst odbccr ltdl fftw3 opencv_ml opencv_photo opencv_highgui opencv_videoio opencv_imgcodecs opencv_objdetect opencv_stitching opencv_dnn opencv_gapi opencv_video opencv_calib3d opencv_features2d opencv_flann opencv_imgproc opencv_core backtrace freetype gthread-2.0 gio-2.0 gmodule-2.0 gobject-2.0 glib-2.0 IlmImfUtil-2_5 IlmImf-2_5 Imath-2_5 Half-2_5 IexMath-2_5 IlmThread-2_5 Iex-2_5 tiffxx tiff jasper quirc protoc protobuf ade png16 brotlidec-static brotlienc-static brotlicommon-static ffi pcreposix pcre pcre16 pcre32 elf gnuintl jpeg deflate lzma jbig zstd webpdecoder webpdemux webpmux webp z bz2 iconv charset ${CONAN_PKG_LIBS})
+set(CONAN_LIBS qcocoa qsqlite qsqlpsql qsqlodbc Qt6Network Qt6Sql Qt6Test Qt6PrintSupport Qt6OpenGLWidgets Qt6Widgets Qt6OpenGL Qt6Gui Qt6Concurrent Qt6Xml Qt6Core gtest_main gmock_main gmock gtest boost_contract boost_coroutine boost_fiber_numa boost_fiber boost_context boost_graph boost_iostreams boost_json boost_locale boost_log_setup boost_log boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_nowide boost_program_options boost_random boost_regex boost_stacktrace_addr2line boost_stacktrace_backtrace boost_stacktrace_basic boost_stacktrace_noop boost_timer boost_type_erasure boost_thread boost_chrono boost_container boost_date_time boost_unit_test_framework boost_prg_exec_monitor boost_test_exec_monitor boost_exception boost_wave boost_filesystem boost_atomic boost_wserialization boost_serialization ssl crypto pcre2-posix pcre2-8 pcre2-16 pcre2-32 double-conversion harfbuzz sqlite3 pq pgcommon pgcommon_shlib pgport pgport_shlib odbc odbcinst odbccr ltdl fftw3 opencv_ml opencv_photo opencv_highgui opencv_videoio opencv_imgcodecs opencv_objdetect opencv_stitching opencv_dnn opencv_gapi opencv_video opencv_calib3d opencv_features2d opencv_flann opencv_imgproc opencv_core backtrace freetype gthread-2.0 gio-2.0 gmodule-2.0 gobject-2.0 glib-2.0 IlmImfUtil-2_5 IlmImf-2_5 Imath-2_5 Half-2_5 IexMath-2_5 IlmThread-2_5 Iex-2_5 tiffxx tiff jasper quirc protoc protobuf ade png16 brotlidec-static brotlienc-static brotlicommon-static ffi pcreposix pcre pcre16 pcre32 elf gnuintl jpeg deflate lzma jbig zstd webpdecoder webpdemux webpmux webp z bz2 iconv charset ${CONAN_LIBS})
+set(CONAN_PKG_LIBS qcocoa qsqlite qsqlpsql qsqlodbc Qt6Network Qt6Sql Qt6Test Qt6PrintSupport Qt6OpenGLWidgets Qt6Widgets Qt6OpenGL Qt6Gui Qt6Concurrent Qt6Xml Qt6Core gtest_main gmock_main gmock gtest boost_contract boost_coroutine boost_fiber_numa boost_fiber boost_context boost_graph boost_iostreams boost_json boost_locale boost_log_setup boost_log boost_math_c99 boost_math_c99f boost_math_c99l boost_math_tr1 boost_math_tr1f boost_math_tr1l boost_nowide boost_program_options boost_random boost_regex boost_stacktrace_addr2line boost_stacktrace_backtrace boost_stacktrace_basic boost_stacktrace_noop boost_timer boost_type_erasure boost_thread boost_chrono boost_container boost_date_time boost_unit_test_framework boost_prg_exec_monitor boost_test_exec_monitor boost_exception boost_wave boost_filesystem boost_atomic boost_wserialization boost_serialization ssl crypto pcre2-posix pcre2-8 pcre2-16 pcre2-32 double-conversion harfbuzz sqlite3 pq pgcommon pgcommon_shlib pgport pgport_shlib odbc odbcinst odbccr ltdl fftw3 opencv_ml opencv_photo opencv_highgui opencv_videoio opencv_imgcodecs opencv_objdetect opencv_stitching opencv_dnn opencv_gapi opencv_video opencv_calib3d opencv_features2d opencv_flann opencv_imgproc opencv_core backtrace freetype gthread-2.0 gio-2.0 gmodule-2.0 gobject-2.0 glib-2.0 IlmImfUtil-2_5 IlmImf-2_5 Imath-2_5 Half-2_5 IexMath-2_5 IlmThread-2_5 Iex-2_5 tiffxx tiff jasper quirc protoc protobuf ade png16 brotlidec-static brotlienc-static brotlicommon-static ffi pcreposix pcre pcre16 pcre32 elf gnuintl jpeg deflate lzma jbig zstd webpdecoder webpdemux webpmux webp z bz2 iconv charset ${CONAN_PKG_LIBS})
 set(CONAN_SYSTEM_LIBS cups resolv c++ ${CONAN_SYSTEM_LIBS})
 set(CONAN_FRAMEWORKS Carbon IOKit IOSurface Metal SystemConfiguration GSS Security CoreText OpenGL Cocoa Accelerate AVFoundation CoreGraphics CoreMedia CoreVideo QuartzCore AppKit Foundation CoreServices CoreFoundation ${CONAN_FRAMEWORKS})
 set(CONAN_FRAMEWORKS_FOUND "")  # Will be filled later
@@ -1730,6 +1770,7 @@ set(CONAN_CMAKE_MODULE_PATH "/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/packag
 			"/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/package/82b93b16e8ac8ffc40fde07cc9e1d4512947b894/lib/cmake/Qt6Gui"
 			"/Users/amirnourinia/.conan/data/qt/6.1.3/_/_/package/82b93b16e8ac8ffc40fde07cc9e1d4512947b894/lib/cmake/Qt6Core"
 			"/Users/amirnourinia/.conan/data/cimg/2.9.9/_/_/package/5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9/"
+			"/Users/amirnourinia/.conan/data/gtest/cci.20210126/_/_/package/46bbc7d40bd1be8662116e9cb5970d0131978465/"
 			"/Users/amirnourinia/.conan/data/boost/1.77.0/_/_/package/344681cf2956030278384cead4a3e9ba34dcbbe5/"
 			"/Users/amirnourinia/.conan/data/openssl/1.1.1k/_/_/package/5a40bf639b389c63ba1d847e246a06541fa354b3/"
 			"/Users/amirnourinia/.conan/data/openssl/1.1.1k/_/_/package/5a40bf639b389c63ba1d847e246a06541fa354b3/lib/cmake"
@@ -1936,6 +1977,76 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_CIMG_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_CIMG_RELWITHDEBINFO_LIST}>
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_CIMG_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_CIMG_MINSIZEREL_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_CIMG_DEBUG_LIST}  ${CONAN_CXX_FLAGS_CIMG_DEBUG_LIST}>)
+
+
+    set(_CONAN_PKG_LIBS_GTEST_DEPENDENCIES "${CONAN_SYSTEM_LIBS_GTEST} ${CONAN_FRAMEWORKS_FOUND_GTEST} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_GTEST_DEPENDENCIES "${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_GTEST}" "${CONAN_LIB_DIRS_GTEST}"
+                                  CONAN_PACKAGE_TARGETS_GTEST "${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES}"
+                                  "" gtest)
+    set(_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_DEBUG "${CONAN_SYSTEM_LIBS_GTEST_DEBUG} ${CONAN_FRAMEWORKS_FOUND_GTEST_DEBUG} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_GTEST_DEPENDENCIES_DEBUG "${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_DEBUG}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_GTEST_DEBUG}" "${CONAN_LIB_DIRS_GTEST_DEBUG}"
+                                  CONAN_PACKAGE_TARGETS_GTEST_DEBUG "${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_DEBUG}"
+                                  "debug" gtest)
+    set(_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_RELEASE "${CONAN_SYSTEM_LIBS_GTEST_RELEASE} ${CONAN_FRAMEWORKS_FOUND_GTEST_RELEASE} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_GTEST_DEPENDENCIES_RELEASE "${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_RELEASE}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_GTEST_RELEASE}" "${CONAN_LIB_DIRS_GTEST_RELEASE}"
+                                  CONAN_PACKAGE_TARGETS_GTEST_RELEASE "${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_RELEASE}"
+                                  "release" gtest)
+    set(_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_GTEST_RELWITHDEBINFO} ${CONAN_FRAMEWORKS_FOUND_GTEST_RELWITHDEBINFO} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_GTEST_DEPENDENCIES_RELWITHDEBINFO "${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_RELWITHDEBINFO}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_GTEST_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_GTEST_RELWITHDEBINFO}"
+                                  CONAN_PACKAGE_TARGETS_GTEST_RELWITHDEBINFO "${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_RELWITHDEBINFO}"
+                                  "relwithdebinfo" gtest)
+    set(_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_MINSIZEREL "${CONAN_SYSTEM_LIBS_GTEST_MINSIZEREL} ${CONAN_FRAMEWORKS_FOUND_GTEST_MINSIZEREL} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_GTEST_DEPENDENCIES_MINSIZEREL "${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_MINSIZEREL}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_GTEST_MINSIZEREL}" "${CONAN_LIB_DIRS_GTEST_MINSIZEREL}"
+                                  CONAN_PACKAGE_TARGETS_GTEST_MINSIZEREL "${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_MINSIZEREL}"
+                                  "minsizerel" gtest)
+
+    add_library(CONAN_PKG::gtest INTERFACE IMPORTED)
+
+    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
+    set_property(TARGET CONAN_PKG::gtest PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_GTEST} ${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_GTEST_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_GTEST_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_GTEST_LIST}>
+
+                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_GTEST_RELEASE} ${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_RELEASE}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_GTEST_RELEASE_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_GTEST_RELEASE_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_GTEST_RELEASE_LIST}>>
+
+                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_GTEST_RELWITHDEBINFO} ${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_RELWITHDEBINFO}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_GTEST_RELWITHDEBINFO_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_GTEST_RELWITHDEBINFO_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_GTEST_RELWITHDEBINFO_LIST}>>
+
+                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_GTEST_MINSIZEREL} ${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_MINSIZEREL}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_GTEST_MINSIZEREL_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_GTEST_MINSIZEREL_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_GTEST_MINSIZEREL_LIST}>>
+
+                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_GTEST_DEBUG} ${_CONAN_PKG_LIBS_GTEST_DEPENDENCIES_DEBUG}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_GTEST_DEBUG_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_GTEST_DEBUG_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_GTEST_DEBUG_LIST}>>)
+    set_property(TARGET CONAN_PKG::gtest PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_GTEST}
+                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_GTEST_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_GTEST_RELWITHDEBINFO}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_GTEST_MINSIZEREL}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_GTEST_DEBUG}>)
+    set_property(TARGET CONAN_PKG::gtest PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_GTEST}
+                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_GTEST_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_GTEST_RELWITHDEBINFO}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_GTEST_MINSIZEREL}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_GTEST_DEBUG}>)
+    set_property(TARGET CONAN_PKG::gtest PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_GTEST_LIST} ${CONAN_CXX_FLAGS_GTEST_LIST}
+                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_GTEST_RELEASE_LIST} ${CONAN_CXX_FLAGS_GTEST_RELEASE_LIST}>
+                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_GTEST_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_GTEST_RELWITHDEBINFO_LIST}>
+                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_GTEST_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_GTEST_MINSIZEREL_LIST}>
+                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_GTEST_DEBUG_LIST}  ${CONAN_CXX_FLAGS_GTEST_DEBUG_LIST}>)
 
 
     set(_CONAN_PKG_LIBS_BOOST_DEPENDENCIES "${CONAN_SYSTEM_LIBS_BOOST} ${CONAN_FRAMEWORKS_FOUND_BOOST} CONAN_PKG::zlib CONAN_PKG::bzip2 CONAN_PKG::libbacktrace CONAN_PKG::libiconv")
@@ -4457,7 +4568,7 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_LIBICONV_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_LIBICONV_MINSIZEREL_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_LIBICONV_DEBUG_LIST}  ${CONAN_CXX_FLAGS_LIBICONV_DEBUG_LIST}>)
 
-    set(CONAN_TARGETS CONAN_PKG::qt CONAN_PKG::cimg CONAN_PKG::boost CONAN_PKG::openssl CONAN_PKG::pcre2 CONAN_PKG::double-conversion CONAN_PKG::harfbuzz CONAN_PKG::sqlite3 CONAN_PKG::libpq CONAN_PKG::odbc CONAN_PKG::opengl CONAN_PKG::fftw CONAN_PKG::opencv CONAN_PKG::libbacktrace CONAN_PKG::eigen CONAN_PKG::freetype CONAN_PKG::glib CONAN_PKG::openexr CONAN_PKG::libtiff CONAN_PKG::jasper CONAN_PKG::quirc CONAN_PKG::protobuf CONAN_PKG::ade CONAN_PKG::libpng CONAN_PKG::brotli CONAN_PKG::libffi CONAN_PKG::pcre CONAN_PKG::libelf CONAN_PKG::libgettext CONAN_PKG::libjpeg CONAN_PKG::libdeflate CONAN_PKG::xz_utils CONAN_PKG::jbig CONAN_PKG::zstd CONAN_PKG::libwebp CONAN_PKG::zlib CONAN_PKG::bzip2 CONAN_PKG::libiconv)
+    set(CONAN_TARGETS CONAN_PKG::qt CONAN_PKG::cimg CONAN_PKG::gtest CONAN_PKG::boost CONAN_PKG::openssl CONAN_PKG::pcre2 CONAN_PKG::double-conversion CONAN_PKG::harfbuzz CONAN_PKG::sqlite3 CONAN_PKG::libpq CONAN_PKG::odbc CONAN_PKG::opengl CONAN_PKG::fftw CONAN_PKG::opencv CONAN_PKG::libbacktrace CONAN_PKG::eigen CONAN_PKG::freetype CONAN_PKG::glib CONAN_PKG::openexr CONAN_PKG::libtiff CONAN_PKG::jasper CONAN_PKG::quirc CONAN_PKG::protobuf CONAN_PKG::ade CONAN_PKG::libpng CONAN_PKG::brotli CONAN_PKG::libffi CONAN_PKG::pcre CONAN_PKG::libelf CONAN_PKG::libgettext CONAN_PKG::libjpeg CONAN_PKG::libdeflate CONAN_PKG::xz_utils CONAN_PKG::jbig CONAN_PKG::zstd CONAN_PKG::libwebp CONAN_PKG::zlib CONAN_PKG::bzip2 CONAN_PKG::libiconv)
 
 endmacro()
 
